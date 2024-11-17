@@ -1,0 +1,35 @@
+Colonne1;Colonne2;Colonne3
+NomFichier;FrequencesFundamentales;NomsNotes
+FluteNote01.mp3;387.0968;Sol3
+FluteNote02.mp3;289.1566;Ré3
+FluteNote03.mp3;256.6845;Do3
+FluteNote04.mp3;324.3243;Mi3
+FluteNote05.mp3;390.2439, 387.0968;Sol3, Sol3
+FluteNote06.mp3;384;Sol3
+FluteNote07.mp3;436.3636;La3
+FluteNote08.mp3;461.5385;La#3
+FluteNote09.mp3;578.3133;Ré4
+FluteNote11.mp3;640, 640;Ré#4, Ré#4
+FluteNote12.mp3;761.9048;Fa#4
+FluteNote13.mp3;761.9048;Fa#4
+FluteNote14.mp3;857.1429;La4
+FluteNote15.mp3;905.6604;La4
+FluteNote16.mp3;960;La#4
+FluteNote17.mp3;1021.2766;Do5
+PianoNote01.mp3;272.7273;Do#3
+PianoNote02.mp3;324.3243;Mi3
+PianoNote03.mp3;363.6364, 363.6364, 363.6364;Fa#3, Fa#3, Fa#3
+PianoNote05.mp3;571.4286, 578.3133;Ré4, Ré4
+PianoNote06.mp3;640, 640;Ré#4, Ré#4
+PianoNote07.mp3;761.9048, 761.9048, 761.9048, 761.9048;Fa#4, Fa#4, Fa#4, Fa#4
+PianoNote08.mp3;960, 960;La#4, La#4
+PianoNote09.mp3;1000, 1000, 1000;Si4, Si4, Si4
+ViolonNote01.mp3;260.8696;Do3
+ViolonNote02.mp3;305.7325;Ré3
+ViolonNote03.mp3;403.3613;Sol3
+ViolonNote04.mp3;484.8485;Si3
+ViolonNote05.mp3;578.3133, 578.3133;Ré4, Ré4
+ViolonNote06.mp3;578.3133;Ré4
+ViolonNote07.mp3;676.0563;Mi4
+ViolonNote08.mp3;857.1429;La4
+ViolonNote09.mp3;1021.2766;Do5
