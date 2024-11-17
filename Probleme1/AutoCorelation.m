@@ -1,3 +1,25 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fonction : AutoCorelation
+% -------------------------------------------------------------------------
+% Description : 
+% Cette fonction calcule l'autocorrélation d'un signal donné.
+% L'autocorrélation mesure la similitude entre un signal et une version 
+% retardée de lui-même pour différents décalages (lags).
+%
+% Entrées :
+%   - x : [vecteur] Le signal d'entrée (domaine temporel).
+%
+% Sorties :
+%   - corr : [vecteur] Valeurs d'autocorrélation pour chaque décalage.
+%   - lags : [vecteur] Valeurs des décalages correspondants.
+%
+% Exemple : 
+%   [corr, lags] = AutoCorelation(signal);
+%
+% Auteur : G10E
+% -------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 function [corr, lags] = AutoCorelation(x)
     % x : signal d'entrée
