@@ -1,3 +1,22 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fonction : SignalUtile
+% -------------------------------------------------------------------------
+% Description : 
+% Cette fonction identifie les segments actifs d'un signal audio en se 
+% basant sur son énergie. Elle retourne les indices temporels de début et 
+% de fin de ces segments en secondes.
+%
+% Entrées :
+%   - audioSignal : [vecteur] Signal audio à analyser.
+%   - Fe : [scalaire] Fréquence d'échantillonnage du signal (en Hz).
+%
+% Sorties :
+%   - startIdxSec : [vecteur] Temps de début des segments actifs (en secondes).
+%   - endIdxSec : [vecteur] Temps de fin des segments actifs (en secondes).
+%
+% Auteur : G10E
+% -------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
