@@ -1,3 +1,23 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fonction : DetectNote
+% -------------------------------------------------------------------------
+% Description : 
+% Cette fonction associe les fréquences détectées à des noms de notes 
+% musicales en fonction de leur proximité avec les fréquences standard 
+% de la gamme tempérée. Elle retourne les noms des notes pour chaque 
+% fréquence détectée.
+%
+% Entrées :
+%   - frequencies : [vecteur] Fréquences détectées (en Hz).
+%
+% Sorties :
+%   - SegmentNoteNames : [vecteur de chaînes] Noms des notes musicales 
+%     correspondantes pour les fréquences d'entrée.
+%
+% Auteur : G10E
+% -------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 function [SegmentNoteNames]=DetectNote(frequencies)
 % Paramètres de la gamme
 notes = {'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'};
