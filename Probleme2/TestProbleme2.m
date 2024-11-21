@@ -1,3 +1,31 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Script : Analyse des Notes Musicales
+% -------------------------------------------------------------------------
+% Description : 
+% Ce script analyse un ensemble de fichiers audio dans un dossier nommé 
+% "Notes" pour extraire des caractéristiques acoustiques telles que :
+% - Les temps de début et de fin des segments actifs.
+% - La durée totale de chaque note.
+% - La puissance moyenne en dBm.
+% - Les fréquences fondamentales détectées par deux méthodes (temporelle et fréquentielle).
+% - La fréquence haute contenant 99.99% de la puissance.
+% - Le nombre d'harmoniques dans cette bande.
+% - Les noms des notes détectées.
+%
+% Les résultats sont enregistrés dans un fichier CSV nommé 
+% "resultats_detection_notes.csv" contenant une ligne par fichier audio.
+%
+% Entrées :
+%   - Dossier "Notes" : Contient les fichiers audio des notes à analyser.
+%
+% Sorties :
+%   - Fichier CSV : "resultats_detection_notes.csv" contenant les résultats.
+%
+% Auteur : G10E
+% -------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 clear 
 close all
 clc
