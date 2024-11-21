@@ -1,34 +1,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Fonction : DetectionDeNotes
+%% Fonction : DetectionF0Temp
 % -------------------------------------------------------------------------
-% Description :
-%   Cette fonction détecte et identifie les notes jouées dans un fichier audio.
-%   Elle segmente le signal en parties actives, calcule les fréquences
-%   fondamentales de chaque segment, et associe ces fréquences aux noms
-%   des notes musicales correspondantes.
+% Description : 
+% Cette fonction détecte la fréquence fondamentale (F0) d'un signal audio 
+% en utilisant l'autocorrélation. Si demandé, elle peut également afficher 
+% des graphiques pour illustrer les résultats.
 %
 % Entrées :
-%   - audio_path (string) : Chemin du fichier audio à analyser.
-%   - print_graphs (bool) : Indicateur pour afficher les graphiques
-%       - true : affiche les graphiques du signal, et
-%                des autocorrélations.
-%       - false : n'affiche aucun graphique.
+%   - audioSignal : [vecteur] Signal audio pour lequel F0 doit être détectée.
+%   - Fe : [scalaire] Fréquence d'échantillonnage du signal (en Hz).
+%   - print_graphs : [booléen] Indique si les graphiques doivent être affichés.
 %
 % Sorties :
-%   - startIdxSec (vector) : Vecteur des instants de début des segments actifs (en secondes).
-%   - endIdxSec (vector) : Vecteur des instants de fin des segments actifs (en secondes).
-%   - frequencies (vector) : Fréquences fondamentales détectées pour chaque segment actif (en Hz).
-%   - SegmentNoteNames (vector) : Noms des notes détectées pour chaque segment actif.
-%
-% Étapes principales :
-%   1. Lecture du signal audio.
-%   2. Détéction des segmentents actifs à l'aide d'un seuil de puissance.
-%   3. Calcul des fréquences fondamentales de chaque segment actif grâce à l'autocorrélation.
-%   4. Attribution des noms de notes.
-%
-% Exemple d'utilisation :
-%   [startIdxSec, endIdxSec, frequencies, SegmentNoteNames] = ...
-%       DetectionDeNotes('Notes/PianoNote09.mp3', true);
+%   - frequencies : [vecteur] Liste des fréquences fondamentales détectées (en Hz).
 %
 % Auteur : G10E
 % -------------------------------------------------------------------------
