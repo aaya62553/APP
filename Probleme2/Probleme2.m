@@ -1,3 +1,29 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fonction : Probleme2
+% -------------------------------------------------------------------------
+% Description : 
+% Cette fonction analyse un signal audio pour extraire plusieurs 
+% caractéristiques telles que la durée totale des segments actifs, la 
+% puissance moyenne en dBm, les fréquences fondamentales détectées, et les 
+% paramètres spectraux comme la fréquence haute contenant 99.99% de la 
+% puissance et le nombre d'harmoniques dans cette bande.
+%
+% Entrées :
+%   - audio_path : [chaîne] Chemin du fichier audio à analyser.
+%
+% Sorties :
+%   - startIdx : [vecteur] Temps de début des segments actifs (en secondes).
+%   - endIdx : [vecteur] Temps de fin des segments actifs (en secondes).
+%   - D : [scalaire] Durée totale des segments actifs (en secondes).
+%   - P_dbm : [scalaire] Puissance moyenne du signal en dBm.
+%   - f0_temp : [vecteur] Fréquences fondamentales détectées par méthode temporelle (en Hz).
+%   - f0_freq : [vecteur] Fréquences fondamentales détectées par méthode fréquentielle (en Hz).
+%   - fh : [scalaire] Fréquence haute contenant 99.99% de la puissance spectrale (en Hz).
+%   - nh : [scalaire] Nombre d'harmoniques dans la bande [0, fh].
+%
+% Auteur : G10E
+% -------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function [startIdx,endIdx,D,P_dbm,f0_temp,f0_freq,fh,nh]=Probleme2(audio_path)
 [audioSignal,Fe]=audioread(audio_path);
