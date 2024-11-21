@@ -1,5 +1,22 @@
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fonction : DetectionF0Freq
+% -------------------------------------------------------------------------
+% Description : 
+% Cette fonction détecte la fréquence fondamentale (F0) d'un signal audio 
+% en utilisant son spectre de Fourier. Elle peut également afficher des 
+% graphiques du signal temporel et de son spectre si demandé.
+%
+% Entrées :
+%   - x : [vecteur] Signal audio à analyser.
+%   - Fe : [scalaire] Fréquence d'échantillonnage du signal (en Hz).
+%   - print_graphs : [booléen] Indique si les graphiques doivent être affichés.
+%
+% Sorties :
+%   - f0 : [scalaire] Fréquence fondamentale détectée (en Hz).
+%
+% Auteur : G10E
+% -------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function [f0]=DetectionF0Freq(x,Fe,print_graphs)
 
