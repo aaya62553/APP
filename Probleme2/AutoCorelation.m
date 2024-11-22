@@ -25,7 +25,7 @@ function [corr, lags] = AutoCorelation(x,Fe)
 
     % Calcul de l'autocorrélation
     for lag = 1:N
-        corr(lag) = sum(x(1:N-lag-1) .* x(lag:N));  % Somme des produits pour chaque décalage
+        corr(lag) = sum(x(1:N-(lag-1)) .* x(lag:N));  % Somme des produits pour chaque décalage
     end
     
     Te = 1 / Fe;
