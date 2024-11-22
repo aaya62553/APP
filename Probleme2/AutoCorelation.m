@@ -24,8 +24,8 @@ function [corr, lags] = AutoCorelation(x,Fe)
     corr = zeros(1, N);  % Initialisation du vecteur d'autocorrélation
 
     % Calcul de l'autocorrélation
-    for lag = 0:N-1
-        corr(lag+1) = sum(x(1:N-lag) .* x(lag+1:N));  % Somme des produits pour chaque décalage
+    for lag = 1:N
+        corr(lag) = sum(x(1:N-lag-1) .* x(lag:N));  % Somme des produits pour chaque décalage
     end
     
     Te = 1 / Fe;
