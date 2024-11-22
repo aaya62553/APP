@@ -21,13 +21,6 @@
 function [f0]=DetectionF0Freq(x,Fe,print_graphs)
 
 N=length(x);
-if print_graphs==true
-    figure;
-    plot(t, x)
-    xlabel('Temps (secondes)');
-    ylabel('Amplitude');
-    title("Signal audio");
-end
 
 audio_fft=fft(x,N);
 audio_fft=abs(audio_fft);
