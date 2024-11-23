@@ -62,11 +62,21 @@ idx=find(cumulative_power>=0.9999,1);
 fh=f(idx);
 
 %nh, le nombre d’harmoniques dans cette bande de fréquences.
-seuil=max(psd)/10;
+seuil=max(psd)/30;
 peak_freqs=[];
-for i=2:length(psd)-1
-    if psd(i)>psd(i-1) && psd(i)>psd(i+1) && psd(i)>seuil
-        peak_freqs(end+1)=f(i);
+exclusion_window = 20; % Taille de la fenêtre d'exclusion (en indices)
+i=2;
+while i < length(psd)-1
+    % Vérifier si l'indice courant est un pic local et dépasse le seuil
+    if psd(i) > psd(i-1) && psd(i) > psd(i+1) && psd(i) > seuil
+        %if abs(f0/f(i) - round(f0/f(i)))<0.01
+            peak_freqs(end+1) = f(i); % Ajouter la fréquence correspondante au pic
+            i = i + exclusion_window; % Sauter les indices dans la fenêtre d'exclusion
+        %end 
+            
+    else
+        i = i + 1; % Passer à l'indice suivant
+         
     end
 end
 
