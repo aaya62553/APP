@@ -14,6 +14,66 @@ clear all
 close all
 clc
 
+% Fréquence d'échantillonnage
+Fe = 1000;  % Hz
+Te = 1 / Fe;
+t = 0:Te:1-Te;  % Durée de 1 seconde
+
+%% Test 1 : Sinusoïde pure
+f_sin = 50;  % Fréquence de la sinusoïde
+x_sin = sin(2 * pi * f_sin * t);  % Génération de la sinusoïde
+
+[corr_sin, lags_sin] = AutoCorelation(x_sin, Fe);
+
+% Vérification visuelle
+figure;
+subplot(3,1,1);
+plot(t, x_sin);
+title('Signal : Sinusoïde pure');
+xlabel('Temps (s)'); ylabel('Amplitude');
+
+subplot(3,1,2);
+plot(lags_sin, corr_sin);
+title('Autocorrélation de la sinusoïde');
+xlabel('Lags (s)'); ylabel('Amplitude');
+
+% Vérification mathématique (pic principal attendu à lag=0)
+assert(abs(corr_sin(1) - 1) < 1e-6, 'Erreur : Pic principal incorrect pour la sinusoïde.');
+
+%% Test 2 : Bruit blanc
+x_noise = randn(1, length(t));  % Génération de bruit blanc
+
+[corr_noise, lags_noise] = AutoCorelation(x_noise, Fe);
+
+% Vérification visuelle
+subplot(3,1,3);
+plot(lags_noise, corr_noise);
+title('Autocorrélation du bruit blanc');
+xlabel('Lags (s)'); ylabel('Amplitude');
+
+% Vérification mathématique (le bruit blanc a une corrélation décroissant rapidement)
+assert(corr_noise(1) == 1, 'Erreur : Pic principal incorrect pour le bruit blanc.');
+
+%% Test 3 : Signal mixte
+x_mixed = x_sin + 0.5 * randn(1, length(t));  % Sinusoïde avec bruit
+
+[corr_mixed, lags_mixed] = AutoCorelation(x_mixed, Fe);
+
+% Vérification visuelle
+figure;
+subplot(2,1,1);
+plot(t, x_mixed);
+title('Signal : Sinusoïde avec bruit');
+xlabel('Temps (s)'); ylabel('Amplitude');
+
+subplot(2,1,2);
+plot(lags_mixed, corr_mixed);
+title('Autocorrélation du signal mixte');
+xlabel('Lags (s)'); ylabel('Amplitude');
+
+
+
+
 % ---- Signal parameters
 Fe  = 10e4;             % fréquence d'echantillonage (Hz)
 Te = 1/Fe;
