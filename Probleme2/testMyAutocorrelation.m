@@ -44,6 +44,16 @@ grid on
 title 'Autocorrelation of signal y '
 xlabel 's'
 ylabel 'W'
+%identification de la période
+N=length(Cyy);
+for i = 2:N ;
+    if Cyy(i)>= Cyy(i-1) && Cyy(i) >= Cyy(i+1);
+        "la période est de "+i*Te+"s"
+        break
+    else;
+        "le signal n'a pas de période distincte via autocorrelation"
+    end
+end
 
 figure('Name','Autocorrelation')%affichage du cosinus
 subplot(2,1,1);
@@ -65,38 +75,58 @@ for i = 2:N ;
     if Cxx(i)>= Cxx(i-1) && Cxx(i) >= Cxx(i+1);
         "la période est de "+i*Te+"s"
         break
+    else;
+        "le signal n'a pas de période distincte via autocorrelation"
     end
-
-
 end
-% 
-% figure('Name','Autocorrelation')%affichage de la fonction linéaire
-% subplot(2,1,1);
-% plot(t,f);
-% grid on;
-% title 'Signal f - time domain'
-% xlabel 's'
-% ylabel 'V'
-% [Cff,tf] = AutoCorelation(f,Fe);
-% subplot(2,1,2);
-% plot(tf,Cff);%affichage de sa correlation
-% grid on
-% title 'Autocorrelation of signal x '
-% xlabel 's'
-% ylabel 'W'
-% 
-% figure('Name','Autocorrelation')%affichage du signal audio
-% subplot(2,1,1);
-% plot(g);
-% grid on;
-% title 'Signal g - time domain'
-% xlabel 's'
-% ylabel 'V'
-% [Cgg,tg] = AutoCorelation(g',Fe);
-% subplot(2,1,2);
-% %plot(tg,Cgg);%affichage de sa correlation
-% grid on
-% title 'Autocorrelation of signal g '
-% xlabel 's'
-% ylabel 'W'
-% 
+
+figure('Name','Autocorrelation')%affichage de la fonction linéaire
+subplot(2,1,1);
+plot(t,f);
+grid on;
+title 'Signal f - time domain'
+xlabel 's'
+ylabel 'V'
+[Cff,tf] = AutoCorelation(f,Fe);
+subplot(2,1,2);
+plot(tf,Cff);%affichage de sa correlation
+grid on
+title 'Autocorrelation of signal x '
+xlabel 's'
+ylabel 'W'
+%identification de la période
+N=length(Cff);
+for i = 2:N ;
+    if Cff(i)>= Cff(i-1) && Cff(i) >= Cff(i+1);
+        "la période est de "+i*Te+"s"
+        break
+    else
+        "le signal n'a pas de période distincte via autocorrelation"
+    end
+end
+
+figure('Name','Autocorrelation')%affichage du signal audio
+subplot(2,1,1);
+plot(g);
+grid on;
+title 'Signal g - time domain'
+xlabel 's'
+ylabel 'V'
+[Cgg,tg] = AutoCorelation(g',Fe);
+subplot(2,1,2);
+%plot(tg,Cgg);%affichage de sa correlation
+grid on
+title 'Autocorrelation of signal g '
+xlabel 's'
+ylabel 'W'
+%identification de la période
+N=length(Cgg);
+for i = 2:N ;
+    if Cgg(i)>= Cgg(i-1) && Cgg(i) >= Cgg(i+1);
+        "la période est de "+i*Te+"s"
+        break
+    else
+        "le signal n'a pas de période distincte via autocorrelation"
+    end
+end
+
