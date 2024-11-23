@@ -64,7 +64,7 @@ fh=f(idx);
 %nh, le nombre d’harmoniques dans cette bande de fréquences.
 seuil=max(psd)/30;
 peak_freqs=[];
-exclusion_window = 20; % Taille de la fenêtre d'exclusion (en indices)
+exclusion_window = 100; % Taille de la fenêtre d'exclusion (en indices)
 i=2;
 while i < length(psd)-1
     % Vérifier si l'indice courant est un pic local et dépasse le seuil
