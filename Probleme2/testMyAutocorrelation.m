@@ -5,6 +5,8 @@
 % ce fichier sert pour tester et afficher les résultats du programme
 % Autocorrelation (NE FONCTIONNE PAS SANS AVOIR OUVERT Autocorelation.m)
 %
+%
+%
 % Auteur : G10E
 % -------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,15 +48,18 @@ xlabel 's'
 ylabel 'W'
 %identification de la période
 N=length(Cyy);
+b=0;
 for i = 2:N ;
     if Cyy(i)>= Cyy(i-1) && Cyy(i) >= Cyy(i+1);
         "la période est de "+i*Te+"s"
+        b=1;
         break
-    else;
-        "le signal n'a pas de période distincte via autocorrelation"
+    
     end
 end
-
+if b==0;
+    "le signal n'a pas de période distincte via autocorrelation"
+end
 figure('Name','Autocorrelation')%affichage du cosinus
 subplot(2,1,1);
 plot(t,x);
@@ -71,13 +76,16 @@ xlabel 's'
 ylabel 'W'
 %identification de la période
 N=length(Cxx);
+b=0;
 for i = 2:N ;
     if Cxx(i)>= Cxx(i-1) && Cxx(i) >= Cxx(i+1);
         "la période est de "+i*Te+"s"
+        b=1;
         break
-    else;
-        "le signal n'a pas de période distincte via autocorrelation"
     end
+end
+if b==0;
+    "le signal n'a pas de période distincte via autocorrelation"
 end
 
 figure('Name','Autocorrelation')%affichage de la fonction linéaire
@@ -96,13 +104,16 @@ xlabel 's'
 ylabel 'W'
 %identification de la période
 N=length(Cff);
+b=0;
 for i = 2:N ;
     if Cff(i)>= Cff(i-1) && Cff(i) >= Cff(i+1);
         "la période est de "+i*Te+"s"
+        b=1;
         break
-    else
-        "le signal n'a pas de période distincte via autocorrelation"
     end
+end
+if b==0;
+    "le signal n'a pas de période distincte via autocorrelation"
 end
 
 figure('Name','Autocorrelation')%affichage du signal audio
@@ -121,12 +132,16 @@ xlabel 's'
 ylabel 'W'
 %identification de la période
 N=length(Cgg);
+b=0;
 for i = 2:N ;
     if Cgg(i)>= Cgg(i-1) && Cgg(i) >= Cgg(i+1);
         "la période est de "+i*Te+"s"
+        b=1;
         break
-    else
-        "le signal n'a pas de période distincte via autocorrelation"
+ 
     end
+end
+if b==0;
+    "le signal n'a pas de période distincte via autocorrelation"
 end
 
