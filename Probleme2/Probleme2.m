@@ -32,7 +32,7 @@ N=length(audioSignal);
 
 D=sum(endIdx-startIdx);
 
-P_dbm=10*log(mean(audioSignal.^2)/0.001); %puissance du signal total ou juste signal utile ?
+P_dbm=10*log10(mean(audioSignal.^2)/0.001); %puissance du signal total ou juste signal utile ?
 
 %frequences fondamentales
 f0_temp=[];
